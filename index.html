@@ -1,0 +1,206 @@
+<html>
+<head>
+
+<link rel="apple-touch-startup-image" href="bg5.png"> 
+<link rel="apple-touch-startup-image" href="bg5.png" sizes="640x920">
+<link rel="apple-touch-startup-image" href="bg5.png" sizes="640x1096">
+        <meta charset="utf-8">
+        <link href="/static/images/favicon.ico" rel="shortcut icon">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+
+        <!-- iPhone -->
+        <link href="apple-touch-icon.png"
+              sizes="57x57"
+              rel="apple-touch-icon">
+        <!-- iPad -->
+        <link href="apple-touch-icon.png"
+              sizes="72x72"
+              rel="apple-touch-icon">
+        <!-- iPhone (Retina) -->
+        <link href="apple-touch-icon.png"
+              sizes="114x114"
+              rel="apple-touch-icon">
+        <!-- iPad (Retina) -->
+        <link href="apple-touch-icon.png"
+              sizes="144x144"
+              rel="apple-touch-icon">
+
+        <!-- iPhone -->
+        <link href="/static/images/apple-touch-startup-image-320x460.png"
+              media="(device-width: 320px)"
+              rel="apple-touch-startup-image">
+        <!-- iPhone (Retina) -->
+        <link href="/static/images/apple-touch-startup-image-640x920.png"
+              media="(device-width: 320px)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+        <!-- iPad (portrait) -->
+        <link href="/static/images/apple-touch-startup-image-768x1004.png"
+              media="(device-width: 768px)
+                 and (orientation: portrait)"
+              rel="apple-touch-startup-image">
+        <!-- iPad (landscape) -->
+        <link href="/static/images/apple-touch-startup-image-748x1024.png"
+              media="(device-width: 768px)
+                 and (orientation: landscape)"
+              rel="apple-touch-startup-image">
+        <!-- iPad (Retina, portrait) -->
+        <link href="/static/images/apple-touch-startup-image-1536x2008.png"
+              media="(device-width: 768px)
+                 and (orientation: portrait)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+        <!-- iPad (Retina, landscape) -->
+        <link href="/static/images/apple-touch-startup-image-1496x2048.png"
+              media="(device-width: 768px)
+                 and (orientation: landscape)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+ 
+	
+ 
+<style>
+h2 {
+  font-family:sans-serif;
+}
+.list {
+  font-family:sans-serif;
+  margin:0;
+  padding:20px 0 0;
+}
+.list > li {
+  display:block;
+  background-color: #eee;
+  padding:10px;
+  box-shadow: inset 0 1px 0 #fff;
+}
+.avatar {
+  max-width: 150px;
+}
+img {
+  max-width: 100%;
+}
+h3 {
+  font-size: 72px;
+  margin:0 0 0.3rem;
+  font-weight: normal;
+  font-weight:bold;
+}
+p {
+  margin:0;
+}
+
+input {
+  border:solid 1px #ccc;
+  border-radius: 5px;
+  padding:7px 14px;
+  margin-bottom:10px
+}
+input:focus {
+  outline:none;
+  border-color:#aaa;
+}
+.sort {
+  padding:8px 30px;
+  border-radius: 6px;
+  border:none;
+  display:inline-block;
+  color:#fff;
+  text-decoration: none;
+  background-color: #28a8e0;
+  height:30px;
+}
+.sort:hover {
+  text-decoration: none;
+  background-color:#1b8aba;
+}
+.sort:focus {
+  outline:none;
+}
+.sort:after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  content:"";
+  position: relative;
+  top:-10px;
+  right:-5px;
+}
+.sort.asc:after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  content:"";
+  position: relative;
+  top:13px;
+  right:-5px;
+}
+.sort.desc:after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #fff;
+  content:"";
+  position: relative;
+  top:-10px;
+  right:-5px;
+}
+
+</style>
+
+<script>
+function updateSource(song){ 
+    audio.src = song;
+	audio.load();
+	audio.play();
+}
+</script>
+</head>
+<body style="padding:0;">
+
+
+
+
+<div id="users">
+  <input class="search" placeholder="Search" />
+
+  <ul ID="playlist" class="list">
+    <li>
+	 
+      <h3 class="name"><a href="#" onclick="updateSource('WilliamDawson.mp3')">William Dawson</a></h3>
+      <p class="born">1906</p>
+	  
+    </li>
+    <li>
+      <h3 class="name"><a href="#" onclick="updateSource('MargaretHutchison.mp3')">Margaret Hutchison</a></h3>
+      <p class="born">1985</p>
+    </li>
+
+  </ul>
+</div>
+<br><br>
+
+
+<div style="position:fixed; width:100%; height:70px; background-color:yellow; padding:5px; bottom:0px; ">
+<audio id="audio" controls="controls">
+    <source id="oggSource" src="" type="audio/ogg"></source>
+    <source id="mp3Source" type="audio/mp3"></source>
+        Your browser does not support the audio format.
+</audio>
+</div>
+
+<script src="http://listjs.com/no-cdn/list.js"></script>
+<script>
+var options = {
+  valueNames: [ 'name', 'born' ]
+};
+
+var userList = new List('users', options);
+</script>
+</body>
+</html>
